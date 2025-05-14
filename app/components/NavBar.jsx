@@ -34,7 +34,7 @@ window.addEventListener("scroll",()=>{
         <a href="#top" className="">
           <Image src={assets.logo} alt="" className="w-70 cursor-pointer mr" />
         </a>
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm opacity-50">
+        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll? "":"bg-white shadow-sm opacity-50 "}  `}>
           <li>
             <a href="#top" className="font-Ovo">
               Home
