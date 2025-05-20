@@ -4,15 +4,15 @@ import React from "react";
 
 const Work = () => {
   return (
-    <div id="work" className="w-full px-[-12%] py-10 scroll-mt-28">
+    <div id="work" className="w-full px-[-15%] py-12 scroll-mt-28">
       <h4 className="text-center mb-2 text-lg  font-Ovo">My Portfolio</h4>
       <h2 className="text-center text-5xl font-Ovo">My Latest Work</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-6 font-Ovo">
         Welcome to my developmemnt portfolio ! Explore a collection of projects
         shpwcasing my expeertise in full-stack development.
       </p>
 
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] my- px-6 gap-5">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(70px,_1fr))]  px-6 gap-5">
         {workData.map((project, index) => (
           <div
             key={index}
