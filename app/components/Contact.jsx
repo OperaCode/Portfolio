@@ -32,7 +32,12 @@ const Contact = () => {
         body: formData,
       });
   
-      
+      if (res.ok) {
+        alert("Form submitted successfully!");
+        form.reset();
+      } else {
+        alert("Error submitting form.");
+      }
     } catch (err) {
       alert("Something went wrong.");
     } finally {
@@ -48,7 +53,7 @@ const Contact = () => {
     >
       <h4 className="text-center mb-2 text-lg font-Ovo">Connect with Me</h4>
       <h2 className="text-center text-5xl font-Ovo">Get in touch</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+      <p className="text-center max-w-2xl mx-auto mt-3  font-Ovo">
         I'd love to hear from you! If you have any questions, comments, or
         feedback, please use the form below.
       </p>
@@ -56,10 +61,10 @@ const Contact = () => {
       <form
         action="https://getform.io/f/aqomnqga"
         method="POST"
-        className="max-w-2xl mx-auto"
-        onSubmit={handleSubmit}
+        className="max-w-2xl mx-auto "
+        // onSubmit={handleSubmit}
       >
-        <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
+        <div className="grid grid-cols-auto gap-6 mt-6 mb-4 ">
           <input
             type="text"
             name="name"
@@ -67,7 +72,7 @@ const Contact = () => {
             value={query.name}
             onChange={handleParam}
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
           />
           <input
             type="email"
@@ -76,7 +81,7 @@ const Contact = () => {
             value={query.email}
             onChange={handleParam}
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
           />
         </div>
         <textarea
@@ -86,19 +91,19 @@ const Contact = () => {
           value={query.message}
           onChange={handleParam}
           required
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          className="w-full p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-4"
         ></textarea>
 
-        {/* <button
+        <button
           type="submit"
           className="py-3 px-8 w-max flex cursor-pointer items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
         >
           Submit Now <Image src={assets.right_arrow_white} alt="" className="w-4" />
-        </button> */}
-        <button
+        </button>
+        {/* <button
           type="submit"
           disabled={isSubmitting}
-          className={`py-3 px-8 w-max flex items-center justify-between gap-2 mx-auto rounded-full 
+          className={`py-3 px-8 w-max flex items-center justify-between gap-2 mx-auto rounded-full cursor-pointer
     ${
       isSubmitting
         ? "bg-gray-400 cursor-not-allowed"
@@ -113,7 +118,7 @@ const Contact = () => {
               <Image src={assets.right_arrow_white} alt="" className="w-4" />
             </>
           )}
-        </button>
+        </button> */}
       </form>
     </div>
   );

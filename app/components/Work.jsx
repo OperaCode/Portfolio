@@ -12,7 +12,7 @@ const Work = () => {
         shpwcasing my expeertise in full-stack development.
       </p>
 
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(70px,_1fr))]  px-6 gap-5">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(50px,_1fr))]  px-6 gap-5">
         {workData.map((project, index) => (
           <div
             key={index}
