@@ -10,7 +10,7 @@ const Services = () => {
       <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
         I am a full stack developer from Nigeria, with 10 years experiemce in multiple companies
       </p>
-      <div className='grid gap-6 my-14 px-6 grid-cols-[grid-template-columns:repeat(auto-fit,_minmax(200px,_1fr))] '>
+      <div className='grid gap-6 my-14 px-6 grid-cols-auto '>
        
 
 {serviceData.map((service, index) => (

@@ -3,7 +3,8 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const NavBar = (isDarkMode, setIsDarkMode) => {
-const [isScroll, setIsScroll] = useState(false)
+const [isScroll, setIsScroll] = useState(false);
+// const [isDarkMode, setIsDarkMode] = useState(false)
   const sideMenuRef = useRef();
 
   const openMenu = ()=>{
@@ -30,7 +31,7 @@ window.addEventListener("scroll",()=>{
       <div className="fixed top-0 right-0 w-11/12 z-10 translate-y-[80%] dark:hidden">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
-      <nav className={`w-full fixed px-5 lg:px-8 xl:px-[5%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "}`} >
+      <nav className={`w-full fixed px-5 lg:px-8 py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "}`} >
         <a href="#top" className=""> 
           <Image src={assets.logo} alt="" className="w-70 cursor-pointer mr" />
         </a>
