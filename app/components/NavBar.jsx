@@ -2,7 +2,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const NavBar = (isDarkMode, setIsDarkMode) => {
+const NavBar = ({isDarkMode, setIsDarkMode}) => {
 const [isScroll, setIsScroll] = useState(false);
 // const [isDarkMode, setIsDarkMode] = useState(false)
   const sideMenuRef = useRef();
@@ -28,12 +28,12 @@ window.addEventListener("scroll",()=>{
 
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/12 z-10 translate-y-[80%] dark:hidden">
-        <Image src={assets.header_bg_color} alt="" className="w-full" />
+      <div className="fixed top-0 right-0 w-11/12 z-10 translate-y-[80%] dark:hidden ">
+        <Image src={assets.header_bg_color} alt="" className="w-full " />
       </div>
-      <nav className={`w-full fixed px-5 lg:px-8 py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "}`} >
+      <nav className={`w-full fixed px-5 lg:px-12 py-4 flex items-center justify-between z-50  ${isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "}`} >
         <a href="#top" className=""> 
-          <Image src={assets.logo} alt="" className="w-70 cursor-pointer mr" />
+          <Image src={assets.logo} alt="" className="w-48 cursor-pointer " />
         </a>
         <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll? "":"bg-white shadow-sm opacity-50 "}  `}>
           <li>
@@ -70,7 +70,7 @@ window.addEventListener("scroll",()=>{
 
           <a
             href="#contact"
-            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo"
+            className="hidden lg:flex items-center gap-3 px-10 py-2 border border-gray-500 rounded-full ml-4 font-Ovo"
           >
             Contact <Image src={assets.arrow_icon} alt="" className="w-3" />{" "}
           </a>
