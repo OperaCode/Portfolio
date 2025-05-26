@@ -2,40 +2,56 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const NavBar = ({isDarkMode, setIsDarkMode}) => {
-const [isScroll, setIsScroll] = useState(false);
-// const [isDarkMode, setIsDarkMode] = useState(false)
+const NavBar = ({ isDarkMode, setIsDarkMode }) => {
+  const [isScroll, setIsScroll] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false)
   const sideMenuRef = useRef();
 
-  const openMenu = ()=>{
-    sideMenuRef.current.style.transform ="translateX(-16rem)"
-  }
-  const closeMenu = ()=>{
-    sideMenuRef.current.style.transform ="translateX(16rem)"
-  }
+  const openMenu = () => {
+    sideMenuRef.current.style.transform = "translateX(-16rem)";
+  };
+  const closeMenu = () => {
+    sideMenuRef.current.style.transform = "translateX(16rem)";
+  };
 
-useEffect(()=>{
-window.addEventListener("scroll",()=>{
-  if(scrollY > 50){
-    setIsScroll(true)
-  }else{
-    setIsScroll(false)
-  }
-})
-},[])
-
-
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
 
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/12 z-10 translate-y-[80%] dark:hidden ">
+      {/* <div className="fixed top-0 right-0 w-11/12 z-10 translate-y-[80%] dark:hidden ">
         <Image src={assets.header_bg_color} alt="" className="w-full " />
-      </div>
-      <nav className={`w-full fixed px-5 lg:px-12 py-4 flex items-center justify-between z-50  ${isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "}`} >
-        <a href="#top" className=""> 
+      </div> */}
+      <nav
+        className={`w-full fixed px-5 lg:px-12 py-4 flex items-center justify-between z-50  ${
+          isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "
+        }`}
+      >
+        {/* Background image */}
+        {!isScroll && (
+          <div className="absolute inset-0 -z-10 dark:hidden">
+            <Image
+              src={assets.header_bg_color}
+              alt="header background"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        <a href="#top" className="">
           <Image src={assets.logo} alt="" className="w-48 cursor-pointer " />
         </a>
-        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll? "":"bg-white shadow-sm opacity-50 "}  `}>
+        <ul
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
+            isScroll ? "" : "bg-white shadow-sm opacity-50 "
+          }  `}
+        >
           <li>
             <a href="#top" className="font-Ovo">
               Home
@@ -64,8 +80,12 @@ window.addEventListener("scroll",()=>{
         </ul>
 
         <div className="flex items-center gap-4">
-          <button onClick={()=>setIsDarkMode(prev => !prev)}>
-            <Image src={isDarkMode ? assets.sun_icon: assets.moon_icon} alt="" className="w-6" />
+          <button onClick={() => setIsDarkMode((prev) => !prev)}>
+            <Image
+              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              alt=""
+              className="w-6"
+            />
           </button>
 
           <a
@@ -82,9 +102,16 @@ window.addEventListener("scroll",()=>{
 
         {/* mobile-menu */}
 
-        <ul ref={sideMenuRef} className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500">
+        <ul
+          ref={sideMenuRef}
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500"
+        >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
-            <Image src={assets.close_black} alt="" className="w-5 cursor-pointer"/>
+            <Image
+              src={assets.close_black}
+              alt=""
+              className="w-5 cursor-pointer"
+            />
           </div>
           <li>
             <a href="#top" className="font-Ovo" onClick={closeMenu}>

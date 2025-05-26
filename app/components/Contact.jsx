@@ -64,7 +64,7 @@ const Contact = () => {
         className="max-w-2xl mx-auto "
         // onSubmit={handleSubmit}
       >
-        <div className="grid grid-cols-auto gap-6 mt-6 mb-4 ">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(50px,_1fr))] gap-6 mt-6 mb-4 ">
           <input
             type="text"
             name="name"
