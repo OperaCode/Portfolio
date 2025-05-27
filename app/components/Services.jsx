@@ -8,7 +8,7 @@ const Services = () => {
       <h4 className="text-center mb-2 text-lg  font-Ovo">What I Offer</h4>
       <h2 className="text-center text-5xl font-Ovo">My Services</h2>
       <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
-        I am a full stack developer from Nigeria, with 10 years experiemce in multiple companies
+        I am a full stack developer from Nigeria, with 3+ years experiemce in multiple companies
       </p>
       <div className='grid gap-6 my-14 px-6 grid-cols-auto '>
        

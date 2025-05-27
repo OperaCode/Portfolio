@@ -18,10 +18,8 @@ const About = () => {
         </div>
         <div className="flex-1">
           <p className="mb-10 max-w-2xl font-Ovo">
-            I am an experienced Fullstack developer with years of professional
-            expertise in the field. Throughout my carrer, I have had the
-            priviledge of collaborating with prestigious organisations,
-            contrbuting to their success and growth
+           
+            I am a skilled Full Stack Developer with years of professional experience building robust, user-centric web applications. Throughout my career, I’ve had the privilege of collaborating with reputable organizations in the web2 and web3 spaces, contributing to impactful projects that drive growth and innovation.
           </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
