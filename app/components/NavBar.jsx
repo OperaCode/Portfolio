@@ -1,6 +1,7 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { Moon, MoonIcon, Sun, SunDim, ArrowUpRight, SunMedium, Menu, X } from 'lucide-react';
 
 const NavBar = ({ isDarkMode, setIsDarkMode }) => {
   const [isScroll, setIsScroll] = useState(false);
@@ -80,23 +81,26 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <button onClick={() => setIsDarkMode((prev) => !prev)}>
-            <Image
-              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+          <button onClick={() => setIsDarkMode((prev) => !prev)} className="w-6">
+            {/* <Image
+              // src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              src={isDarkMode ? <SunIcon/> : <Moon/>}
               alt=""
               className="w-6"
-            />
+            /> */}
+            {isDarkMode ? <SunMedium/> : <MoonIcon/> }
           </button>
 
           <a
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2 border border-gray-500 rounded-full ml-4 font-Ovo"
           >
-            Contact <Image src={assets.arrow_icon} alt="" className="w-3" />{" "}
+            Contact <ArrowUpRight/> {" "}
           </a>
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
-            <Image src={assets.menu_black} alt="" className="w-6" />
+            {/* <Image src={assets.menu_black} alt="" className="w-6" /> */}
+            <Menu/>
           </button>
         </div>
 
@@ -107,11 +111,12 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
           className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
-            <Image
+            {/* <Image
               src={assets.close_black}
               alt=""
               className="w-5 cursor-pointer"
-            />
+            /> */}
+            <X className="w-5 cursor-pointer" size={28} strokeWidth={6}/>
           </div>
           <li>
             <a href="#top" className="font-Ovo" onClick={closeMenu}>
