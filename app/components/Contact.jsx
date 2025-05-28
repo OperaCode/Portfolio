@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full px-[-12%] py-10 scroll-mt-28 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"
+      className="w-full px-[-12%] py-10 scroll-mt-28 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto] dark:bg-none "
     >
       <h4 className="text-center mb-2 text-lg font-Ovo">Connect with Me</h4>
       <h2 className="text-center text-5xl font-Ovo">Get in touch</h2>
@@ -72,7 +72,7 @@ const Contact = () => {
             value={query.name}
             onChange={handleParam}
             required
-            className="flex-1 p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
           />
           <input
             type="email"
@@ -81,7 +81,7 @@ const Contact = () => {
             value={query.email}
             onChange={handleParam}
             required
-            className="flex-1 p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
           />
         </div>
         <textarea
@@ -91,12 +91,12 @@ const Contact = () => {
           value={query.message}
           onChange={handleParam}
           required
-          className="w-full p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-4"
+          className="w-full p-2 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-4 dark:bg-darkHover/30 dark:border-white/90"
         ></textarea>
 
         <button
           type="submit"
-          className="py-3 px-8 w-max flex cursor-pointer items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+          className="py-3 px-8 w-max flex cursor-pointer items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
         >
           Submit Now <Image src={assets.right_arrow_white} alt="" className="w-4" />
         </button>

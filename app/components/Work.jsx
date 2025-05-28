@@ -1,4 +1,5 @@
 import { assets, workData } from "@/assets/assets";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -12,7 +13,7 @@ const Work = () => {
         shpwcasing my expeertise in full-stack development.
       </p>
 
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(50px,_1fr))]  px-6 gap-5">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(50px,_1fr))]  px-6 gap-5 dark:text-black">
         {workData.map((project, index) => (
           <div
             key={index}
@@ -35,14 +36,15 @@ const Work = () => {
       </div>
       <a
         href=""
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-purple-50 duration-500"
+        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-purple-50 duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
       >
         Show More{" "}
-        <Image
+        <ArrowRight/>
+        {/* <Image
           src={assets.right_arrow_bold}
           alt="Right_arroe"
           className="w-4"
-        />
+        /> */}
       </a>
     </div>
   );
