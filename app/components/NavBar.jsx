@@ -31,8 +31,8 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
         <Image src={assets.header_bg_color} alt="" className="w-full " />
       </div> */}
       <nav
-        className={`w-full fixed px-5 lg:px-12 py-4 flex items-center justify-between z-50  ${
-          isScroll ? "bg-white bg-opacity-50 backdrop:blur-lg shadow-sm" : " "
+        className={`w-full fixed px-5 lg:px-12 xl:px-[8%] py-4 flex items-center justify-between z-50  ${
+          isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20" : " "
         }`}
       >
         {/* Background image */}
@@ -49,8 +49,8 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
           <Image src={assets.logo} alt="" className="w-48 cursor-pointer " />
         </a>
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll ? "" : "bg-white shadow-sm opacity-50 "
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3   ${
+            isScroll ? "" : "bg-white text-black shadow-sm opacity-50 backdrop-blur-lg "
           }  `}
         >
           <li>
@@ -111,11 +111,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
           className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
-            {/* <Image
-              src={assets.close_black}
-              alt=""
-              className="w-5 cursor-pointer"
-            /> */}
+            
             <X className="w-5 cursor-pointer" size={28} strokeWidth={6}/>
           </div>
           <li>
