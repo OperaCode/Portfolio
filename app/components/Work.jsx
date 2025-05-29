@@ -34,7 +34,7 @@ const Work = ({isDarkMode}) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay:0.9, duration: 0.6 }}
-      className="grid grid-cols-[repeat(auto-fit,_minmax(50px,_1fr))]  px-6 gap-5 dark:text-black">
+      className="grid grid-cols-[repeat(auto-fit,_minmax(50px,_1fr))] px-6 gap-5 dark:text-black">
         {workData.map((project, index) => (
           <motion.div
            whileHover={{scale:1.05}}
@@ -57,7 +57,10 @@ const Work = ({isDarkMode}) => {
           </motion.div>
         ))}
       </motion.div>
-      <a
+      <motion.a
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay:1.1, duration: 0.5 }}
         href=""
         className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-purple-50 duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
       >
@@ -68,7 +71,7 @@ const Work = ({isDarkMode}) => {
           alt="Right_arroe"
           className="w-4"
         /> */}
-      </a>
+      </motion.a>
     </motion.div>
   );
 };
