@@ -9,17 +9,38 @@ import NavBar from "./components/NavBar";
 import Services from "./components/Services";
 import Work from "./components/Work";
 
-
-export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-useEffect(()=>{
-if(localStorage.theme === "dark" || (! ("theme" in localStorage)&& window.matchMedia("(prefers-color-scheme:dark)").matches)){
-  setIsDarkMode(true)
-}else{
-  setIsDarkMode(false)
+// 💡 Apply theme before React mounts to prevent FOUC
+if (typeof window !== "undefined") {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
 }
-},[])
+export default function Home() {
+//   const [isDarkMode, setIsDarkMode] = useState(false);
+
+// useEffect(()=>{
+// if(localStorage.theme === "dark" || (! ("theme" in localStorage)&& window.matchMedia("(prefers-color-scheme:dark)").matches)){
+//   setIsDarkMode(true)
+// }else{
+//   setIsDarkMode(false)
+// }
+// },[])
+
+const [isDarkMode, setIsDarkMode] = useState(() => {
+  if (typeof window !== "undefined") {
+    return (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  }
+  return false;
+});
+
 
   useEffect(()=>{
 if(isDarkMode){
