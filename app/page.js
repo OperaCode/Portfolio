@@ -21,36 +21,35 @@ if (typeof window !== "undefined") {
   }
 }
 export default function Home() {
-//   const [isDarkMode, setIsDarkMode] = useState(false);
+const [isDarkMode, setIsDarkMode] = useState(false);
+const [hasMounted, setHasMounted] = useState(false);
 
-// useEffect(()=>{
-// if(localStorage.theme === "dark" || (! ("theme" in localStorage)&& window.matchMedia("(prefers-color-scheme:dark)").matches)){
-//   setIsDarkMode(true)
-// }else{
-//   setIsDarkMode(false)
-// }
-// },[])
+// Set initial theme on mount
+useEffect(() => {
+  const dark =
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
+  setIsDarkMode(dark);
+  setHasMounted(true);
+}, []);
 
-const [isDarkMode, setIsDarkMode] = useState(() => {
-  if (typeof window !== "undefined") {
-    return (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-    );
+// Apply dark mode class after mount
+useEffect(() => {
+  if (!hasMounted) return;
+
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "";
   }
-  return false;
-});
+}, [isDarkMode, hasMounted]);
 
+// Prevent rendering until after mount to avoid hydration issues
+if (!hasMounted) return null;
 
-  useEffect(()=>{
-if(isDarkMode){
-  document.documentElement.classList.add("dark")
-  localStorage.theme = "dark";
-}else{
-  document.documentElement.classList.remove("dark");
-  localStorage.theme = "";
-}
-  },[isDarkMode])
   return (
     <>
     <NavBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>

@@ -12,14 +12,14 @@ const Work = ({isDarkMode}) => {
       transition={{ duration: 1 }}
     id="work" className="w-full px-[-15%] py-12 scroll-mt-24">
       <motion.h4
-      initial={{y:-20, opacity: 0 }}
-      whileInView={{y:0, opacity: 1 }}
-      transition={{ delay:0,duration: 0.5 }}
+      initial={{ y: -20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
       className="text-center mb-2 text-lg  font-Ovo">My Portfolio</motion.h4>
       <motion.h2
-      initial={{y:-20, opacity: 0 }}
-      whileInView={{y:0, opacity: 1 }}
-      transition={{ delay:0,duration: 0.5 }}
+      initial={{ y: -20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
       className="text-center text-5xl font-Ovo">My Latest Work</motion.h2>
       <motion.p 
       initial={{ opacity: 0 }}
