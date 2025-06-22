@@ -16,9 +16,9 @@ const Footer = ({isDarkMode}) => {
     <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
         <p> &copy; 2025 Raphael Faboyinde. All rights reserved</p>
         <ul className="flex items-center gap-10 justify-cen ter mt-4 sm:mt-0">
-            <li><a target="_blank" href="https://github.com/OperaCode">GitHub</a></li>
+            <li><a target="_blank" href="https://x.com/OperaFaboyinde">X</a></li>
             <li><a target="_blank" href="www.linkedin.com/in/raphael-faboyinde-a031b1195">LinkedIn</a></li>
-            <li><a target="_blank" href="https://github.com/OperaCode?tab=overview&from=2025-05-01&to=2025-05-09">Twitter</a></li>
+            <li><a target="_blank" href="https://github.com/OperaCode">GitHub</a></li>
         </ul>
     </div>
 
